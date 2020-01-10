@@ -14,8 +14,8 @@ while getopts ":a:r:b:p:h" o; do case "${o}" in
 	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
 esac done
 
-[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
-[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/LukeSmithxyz/LARBS/master/progs.csv"
+[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/puneetpahuja/voidrice.git"
+[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/puneetpahuja/LARBS/master/progs.csv"
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$repobranch" ] && repobranch="master"
 
@@ -39,7 +39,7 @@ welcomemsg() { \
 	}
 
 selectdotfiles() { \
-	edition="$(dialog --title "Select LARBS version." --menu "Select which version of LARBS you wish to have as default:" 10 70 2 i3 "The classic version of LARBS using i3." dwm "The version of LARBS using suckless's dwm." custom "If you are supplying commandline options for LARBS." 3>&1 1>&2 2>&3 3>&1)" || error "User exited."
+	edition="$(dialog --title "Select LARBS version." --menu "Select which version of LARBS you wish to have as default:" 10 70 2 i3 "The classic version of LARBS using i3." bspwm "The version of LARBS using bspwm" custom "If you are supplying commandline options for LARBS." 3>&1 1>&2 2>&3 3>&1)" || error "User exited."
 	}
 
 getuserandpass() { \
